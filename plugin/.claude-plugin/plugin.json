@@ -1,0 +1,5 @@
+{
+  "name": "agent-kit",
+  "version": "1.0.0",
+  "description": "Agent kit for Claude Code: checks the project's kit copy at session start and creates new projects on the kit layout"
+}
