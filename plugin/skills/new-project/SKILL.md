@@ -17,8 +17,6 @@ The owner asked for a new project: `$ARGUMENTS`.
   the owner decides in it. Write them from the owner's words; do not invent scope.
 - **objective** — one plain phrase in the owner's language for the project summary (`objective`
   field, kit `STATUS.md` §2): what the project is for, as a colleague would say it aloud.
-- **modules** — `clusters` if it will run anything on a compute cluster, `research-experiments`
-  if it runs research experiments; otherwise none.
 - **github** — whether to publish it as a private GitHub repository (`--github`, needs `gh` signed in).
 
 Show the owner the inputs in one short message and go on unless they object.
@@ -28,7 +26,7 @@ Show the owner the inputs in one short message and go on unless they object.
 ```sh
 bash "${CLAUDE_SKILL_DIR}/scripts/new_project.sh" <name> \
   --title "<title>" --purpose "<purpose>" --objective "<objective>" \
-  [--modules clusters,research-experiments] [--github] [--dir <parent, default ~/code>]
+  [--github] [--dir <parent, default ~/code>]
 ```
 
 The script refuses if the folder (or the GitHub repo) already exists, takes the newest release from

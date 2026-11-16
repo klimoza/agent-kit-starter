@@ -17,6 +17,6 @@ else
 fi
 
 cat <<'TXT'
-- Standing rules (kit CORE; the project's AGENTS.md is authoritative where it says more): acceptance, publication and deploy come only from the owner's own words, never from silence or passing checks. New compute allocations only at the owner's request. Messages and emails in the owner's name stay drafts until they say to send. No secrets or tokens in repositories. Uncommitted work that predates the task is preserved.
+- Standing rules (kit CORE; the project's AGENTS.md is authoritative where it says more): acceptance, publication and deploy come only from the owner's own words, never from silence or passing checks. Paid or external resources only at the owner's request. Messages and emails in the owner's name stay drafts until they say to send. No secrets or tokens in repositories. Uncommitted work that predates the task is preserved.
 TXT
 exit 0

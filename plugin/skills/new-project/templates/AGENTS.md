@@ -13,18 +13,18 @@ Always: kit CORE ([`agent-kit/{{KIT}}/CORE.md`](agent-kit/{{KIT}}/CORE.md)), thi
 | asking the owner, an action under a constraint | [`docs/DECISIONS.md`](docs/DECISIONS.md) |
 | writing the status | kit [`STATUS.md`](agent-kit/{{KIT}}/STATUS.md) §2 |
 | past events | [`docs/HISTORY.md`](docs/HISTORY.md), git log |
-{{MODULE_ROWS}}| creating or editing any of these files | kit [`PROJECT.md`](agent-kit/{{KIT}}/PROJECT.md), the relevant section |
+| creating or editing any of these files | kit [`PROJECT.md`](agent-kit/{{KIT}}/PROJECT.md), the relevant section |
 
 ## Active constraints
 
 - Only the owner grants or refuses acceptance, publication and deploy, in their own words; never infer
   them from silence, elapsed time or passing checks.
 - No secrets, tokens or personal data in the repository.
-{{MODULE_CONSTRAINTS}}
+
 ## Agent kit
 - version: {{VERSION}} — [`agent-kit/{{KIT}}/`](agent-kit/{{KIT}}/), a copy of the portable set of release {{KIT}} (sha256 MANIFEST.sha256: {{HASH}})
 - layout: PROJECT.md; canon — `main` of {{CANON}}
-- modules: {{MODULES}}
+- modules: none
 - extensions: none
 - deviations: none
 

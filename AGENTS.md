@@ -6,7 +6,7 @@
 
 ## Что читать
 
-1. Сверить выпуск ниже, затем его [CORE](releases/v1.0/CORE.md) и этот файл.
+1. Сверить выпуск ниже, затем его [CORE](releases/v1.1/CORE.md) и этот файл.
 2. [README](README.md) — что где лежит; [SETUP](SETUP.md) — как из этого собирается среда;
    [CHANGELOG](CHANGELOG.md) — выпуски; [LESSONS](LESSONS.md) — уроки, из которых растут правила.
 3. Для плагина: затрагиваемый навык или хук в `plugin/` и его скрипт.
@@ -33,12 +33,12 @@
 
 ## Agent kit
 
-- version: 1.0 — releases/v1.0/; MANIFEST.sha256 SHA-256: ba0e4f8a330af5ef05079bf6b912f85a86c14ccbaf6dc8c55e998a1bc9388f0d
+- version: 1.1 — releases/v1.1/; MANIFEST.sha256 SHA-256: 95a04fccdd4c29d490dd567c75dda06eaeb822cbf823be641c2d8dcf8db8485a
 - layout: сопровождающий репозиторий; обзор — README.md и CHANGELOG.md.
 - modules: none
 - extensions: plugin/, templates/, scripts/
-- deviations: собственный выпуск читается из releases/v1.0/; отдельная копия в
+- deviations: собственный выпуск читается из releases/v1.1/; отдельная копия в
   agent-kit/ и сводка docs/STATUS.md этому репозиторию не нужны.
 
-Проверка до чтения: SHA-256 `releases/v1.0/MANIFEST.sha256` должен совпасть с хешем выше,
+Проверка до чтения: SHA-256 `releases/v1.1/MANIFEST.sha256` должен совпасть с хешем выше,
 затем `scripts/release.sh check`.
