@@ -30,5 +30,5 @@ Always: kit CORE ([`agent-kit/{{KIT}}/CORE.md`](agent-kit/{{KIT}}/CORE.md)), thi
 
 Check the copy before use (macOS: `shasum -a 256`):
 `sha256sum agent-kit/{{KIT}}/MANIFEST.sha256` must print the hash above, and
-`(cd agent-kit/{{KIT}} && sha256sum -c MANIFEST.sha256)` must report every file OK. If not, say so;
+`(cd agent-kit/{{KIT}}/ && sha256sum -c MANIFEST.sha256)` must report every file OK. If not, say so;
 never substitute a draft or another copy.

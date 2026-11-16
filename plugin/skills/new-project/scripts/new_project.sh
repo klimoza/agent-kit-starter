@@ -12,7 +12,7 @@ sha() { if command -v sha256sum >/dev/null 2>&1; then sha256sum "$@"; else shasu
 
 HERE="$(cd "$(dirname "$0")" && pwd)"
 TPL="$HERE/../templates"
-HERE_KIT="$(cd "$HERE/../../../.." && pwd)"
+. "$HERE/../../../lib/kit_root.sh"
 
 name="${1:-}"; [ -n "$name" ] && shift || die "usage: new_project.sh <name> --title … --purpose … --objective … [--modules …] [--github]"
 title="" purpose="" objective="" modules="" github=0 parent="$HOME/code"
@@ -46,10 +46,9 @@ if [ "$github" = 1 ]; then
   fi
 fi
 
-# --- the kit release: the newest releases/vX.Y next to this plugin, or in $AGENT_KIT_DIR
-kitsrc="${AGENT_KIT_DIR:-$HERE_KIT}"
-[ -d "$kitsrc/releases" ] || die "no releases/ in $kitsrc (set AGENT_KIT_DIR to your agent-kit checkout)"
-kit="$(cd "$kitsrc/releases" && ls -d v*/ | tr -d / | sort -V | tail -1)"
+# --- the kit release: the newest sealed releases/vX.Y of the agent-kit checkout
+kitsrc="$(kit_root)" || exit 1
+kit="$(cd "$kitsrc/releases" && ls v*/MANIFEST.sha256 2>/dev/null | cut -d/ -f1 | sort -V | tail -1)"
 [ -n "$kit" ] || die "no release in $kitsrc/releases"
 rel="$kitsrc/releases/$kit"
 (cd "$rel" && sha -c MANIFEST.sha256 >/dev/null) || die "release $kit does not match its own manifest"

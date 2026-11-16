@@ -39,5 +39,5 @@ If the script stops, report its message as it is; do not finish its steps by han
 
 ## 3. Tell the owner what is left
 
-Open the folder in Claude Code (or Codex): the agent reads `AGENTS.md` first. Describe the first
+Open the folder in Claude Code: the agent reads `AGENTS.md` first. Describe the first
 task; the agent records it in `docs/STATUS.md`.

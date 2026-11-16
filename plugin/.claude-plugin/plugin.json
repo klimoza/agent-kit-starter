@@ -1,5 +1,5 @@
 {
   "name": "agent-kit",
   "version": "1.0.0",
-  "description": "Agent kit for Claude Code: checks the project's kit copy at session start and creates new projects on the kit layout"
+  "description": "Agent kit for Claude Code: checks the project's kit copy at session start; creates the notes repository and new projects; moves projects to a new kit release"
 }

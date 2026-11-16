@@ -1,5 +1,13 @@
 # Changelog
 
+## Среда вокруг kit
+
+Выпуск v1.0 не менялся. Добавлены: `SETUP.md` (сборка среды по шагам), вход
+сопровождающего `AGENTS.md`, `LESSONS.md`, шаблон репозитория памяти `templates/notes/`
+с навыком `/new-notes`, навык `/kit-upgrade`, `scripts/release.sh`, шаблоны инструкций
+проекта, службы Remote Control и рутины. Скрипты плагина находят kit и тогда, когда плагин
+установлен копией (`AGENT_KIT_DIR` или `~/code/agent-kit`).
+
 ## v1.0
 
 Первый выпуск стартового набора: CORE, PROJECT, STATUS, модули `clusters` и
