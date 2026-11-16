@@ -1,0 +1,25 @@
+# Claude Code Remote Control for one repository in ~/code (systemd user service).
+#   cp templates/server/claude-rc@.service ~/.config/systemd/user/
+#   loginctl enable-linger $USER
+#   systemctl --user enable --now claude-rc@<repo>
+# Sessions show up at claude.ai/code and in the Claude app as "vps-<repo>-…".
+# Each session gets its own git worktree. To look at it: tmux -L rc-<repo> attach
+# (leave with Ctrl-b d). Run `claude` once by hand in the repository first and
+# accept the folder trust prompt, or the service waits on it forever.
+[Unit]
+Description=Claude Code Remote Control in ~/code/%i
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=forking
+Environment=PATH=%h/.local/bin:/usr/local/bin:/usr/bin:/bin
+WorkingDirectory=%h/code/%i
+# Own tmux server per repository: when claude exits, the server exits, systemd restarts it.
+ExecStart=/usr/bin/tmux -L rc-%i new-session -d -s rc -c %h/code/%i "claude remote-control --spawn worktree --remote-control-session-name-prefix vps-%i"
+ExecStop=/usr/bin/tmux -L rc-%i kill-server
+Restart=always
+RestartSec=30
+
+[Install]
+WantedBy=default.target
